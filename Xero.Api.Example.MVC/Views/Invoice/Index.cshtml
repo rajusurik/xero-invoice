@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Xero.Api.Core.Model.Invoice>
+@{
+    ViewData["Title"] = "Index";
+}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<h2>Invoice Details </h2>
+<h3>
+    @Html.ActionLink("Create New", "Create")
+</h3>
+<table class="table table-striped table-condensed" id="employeeTable">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                ContactName
+            </th>
+            <th>
+                Type
+            </th>
+            <th>
+                SubTotal
+            </th>
+            <th>
+                TotalTax
+            </th>
+            <th>
+                Total
+            </th>
+            <th>
+                AmountDue
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Contact.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SubTotal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalTax)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AmountDue)
+                </td>
+
+                @*<td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Number }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Number }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Number })
+                    </td>*@
+            </tr>
+        }
+    </tbody>
+</table>
