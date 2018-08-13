@@ -84,7 +84,7 @@ namespace Xero.Api.Example.MVC.Controllers
 
         public bool AddApiAuditLog(Invoice model)
         {
-            SqlConnection con = new SqlConnection("Data Source=WINCTRL-IURSOMN;Initial Catalog=XeroApiDatabase;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=DESKTOP-CG0TPO5;Initial Catalog=XeroApiDatabase;Integrated Security=True");
 
             SqlCommand cmd = new SqlCommand("AddApiAuditLog", con);
             cmd.CommandType = CommandType.StoredProcedure;
